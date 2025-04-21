@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Charity Donation Tracker</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Active Campaigns</h1>
+    <ul>
+        {% for c in campaigns %}
+        <li>
+            <strong>{{ c.title }}</strong><br>
+            Goal: ₹{{ c.goal_amount }} | Raised: ₹{{ c.raised_amount }}<br>
+            <a href="/donate/{{ c.campaign_id }}">Donate Now</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
